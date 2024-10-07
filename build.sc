@@ -1,11 +1,6 @@
 // import Mill dependency
 import mill._
-import mill.define.Sources
-import mill.modules.Util
-import mill.scalalib.TestModule.ScalaTest
 import scalalib._
-// support BSP
-import mill.bsp._
 
 object ChiselPlayground extends SbtModule { m =>
   override def millSourcePath = os.pwd
@@ -22,9 +17,4 @@ object ChiselPlayground extends SbtModule { m =>
   override def scalacPluginIvyDeps = Agg(
     ivy"org.chipsalliance:::chisel-plugin:6.5.0",
   )
-  object test extends SbtModuleTests with TestModule.ScalaTest {
-    override def ivyDeps = m.ivyDeps() ++ Agg(
-      ivy"org.scalatest::scalatest::3.2.16"
-    )
-  }
 }

@@ -2,8 +2,8 @@ BUILD_DIR = ./build
 
 PRJ = ChiselPlayground
 
-test:
-	mill ChiselPlayground.test
+idea:
+	mill -i mill.idea.GenIdea/idea
 
 verilog:
 	mkdir -p $(BUILD_DIR)
